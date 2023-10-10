@@ -1,20 +1,23 @@
-const DisplayResize = () => {
+const topScroll = () => {
+    scrollTo(document.documentElement, 0, 500);
+};
 
-    const [isMobile, setIsMobile] = useState(false);
+function scrollTo(el, to, duration) {
+    let start = el.scrollTop,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
 
-    useEffect(() => {
-        function handleResize(width) {
-            if (width <= 768) {
-                setIsMobile(true);
-            } else {
-                setIsMobile(false);
-            }
-        };
+    let animateScroll = function () {
+        currentTime += increment;
+        let val = Math.easeInOutQuad(currentTime, start, change, duration);
+        el.scrollTop = val;
+        if (currentTime < duration) {
+            setTimeout(animateScroll, increment);
+        }
+    };
 
-        window.addEventListener('resize', handleResize);
-        handleResize();
-        return () => window.removeEventListener('resize', handleResize);
-    }, [])
+    animateScroll();
 }
 
-export default DisplayResize;
+export default { topScroll }

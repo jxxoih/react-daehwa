@@ -1,12 +1,11 @@
-import MoveToUrl from "utils/MoveToUrl";
 import Logo from "assets/imgs/logo.png";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className="header">
             <div className="headerContainer1">
                 <div className="headerLogo">
-                    <img src={Logo} alt="logo" onClick={() => MoveToUrl(0)} />
+                    <img src={Logo} alt="logo" onClick={() => props.func(0)} />
                 </div>
                 <div className="headerMenu">
                     <ul>
@@ -25,28 +24,28 @@ const Header = () => {
                     <ul>
                         <li>
                             <ul>
-                                <li onClick={() => MoveToUrl(1)}>인사말</li>
-                                <li onClick={() => MoveToUrl(2)}>연혁</li>
-                                <li onClick={() => MoveToUrl(3)}>찾아오시는길</li>
+                                <li onClick={() => props.func(1)}>인사말</li>
+                                <li onClick={() => props.func(2)}>연혁</li>
+                                <li onClick={() => props.func(3)}>찾아오시는길</li>
                             </ul>
                         </li>
                         <li>
                             <ul>
-                                <li onClick={() => MoveToUrl(4)}>제품소개</li>
+                                <li onClick={() => props.func(4)}>제품소개</li>
                             </ul>
                         </li>
                         <li>
                             <ul>
-                                <li onClick={() => MoveToUrl(5)}>인증서</li>
+                                <li onClick={() => props.func(5)}>인증서</li>
                             </ul>
                         </li>
                         <li>
                             <ul>
-                                <li onClick={() => MoveToUrl(6)}>고객문의</li>
-                                <li onClick={() => MoveToUrl(7)}>공지사항</li>
-                                <li onClick={() => MoveToUrl(8)}>자주묻는질문</li>
-                                <li onClick={() => MoveToUrl(9)}>1:1 문의하기</li>
-                                <li onClick={() => MoveToUrl(10)}>인재채용</li>
+                                <li onClick={() => props.func(6)}>고객문의</li>
+                                <li onClick={() => props.func(7)}>공지사항</li>
+                                <li onClick={() => props.func(8)}>자주묻는질문</li>
+                                <li onClick={() => props.func(9)}>1:1 문의하기</li>
+                                <li onClick={() => props.func(10)}>인재채용</li>
                             </ul>
                         </li>
                     </ul>

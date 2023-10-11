@@ -1,6 +1,6 @@
 import "styles/product.css";
 
-import up from "assets/imgs/up.png";
+import UpImgComp from "components/UpImgComp";
 
 const ProductInfo = () => {
     return (
@@ -23,7 +23,7 @@ const ProductInfo = () => {
                                 <span className="mainTitle_m">제품소개</span>
                                 <span className="mainTitle_eng_m">Product</span>
                                 <span>
-                                    <img className="upImg disnone" src={up} alt="" />
+                                    <UpImgComp arg="upImg disnone" />
                                 </span>
                             </p>
                         </div>

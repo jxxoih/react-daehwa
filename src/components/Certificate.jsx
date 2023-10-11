@@ -1,10 +1,10 @@
 import "styles/certificate.css";
 
-import up from "assets/imgs/up.png";
 import kr1 from "assets/imgs/kr1.png";
 import kr2 from "assets/imgs/kr2.png";
 import cn1 from "assets/imgs/cn1.png";
 import cn2 from "assets/imgs/cn2.png";
+import UpImgComp from "components/UpImgComp";
 
 
 
@@ -27,7 +27,9 @@ const Certificate = () => {
                             <p>
                                 <span className="mainTitle_m">인증서</span>
                                 <span className="mainTitle_eng_m">Certificate</span>
-                                <span><img className="upImg disnone" src={up} alt="" /></span>
+                                <span>
+                                    <UpImgComp arg="upImg disnone" />
+                                </span>
                             </p>
                         </div>
                     </div>

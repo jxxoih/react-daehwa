@@ -1,7 +1,7 @@
 import "styles/company.css";
 
-import up from "assets/imgs/up.png";
 import location_m from "assets/imgs/location_m.png";
+import UpImgComp from "components/UpImgComp";
 
 const LocationMap = () => {
     return (
@@ -23,7 +23,9 @@ const LocationMap = () => {
                             <p>
                                 <span className="mainTitle_m">회사소개</span>
                                 <span className="mainTitle_eng_m">Company</span>
-                                <span><img className="upImg disnone" src={up} alt="" /></span>
+                                <span>
+                                    <UpImgComp arg="upImg disnone" />
+                                </span>
                             </p>
                         </div>
                     </div>

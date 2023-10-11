@@ -1,7 +1,7 @@
 import "styles/company.css";
 
-import up from "assets/imgs/up.png";
 import logo from "assets/imgs/logo.png";
+import UpImgComp from "components/UpImgComp";
 
 const Greetings = () => {
     return (
@@ -24,7 +24,7 @@ const Greetings = () => {
                                 <span className="mainTitle_m">회사소개</span>
                                 <span className="mainTitle_eng_m">Company</span>
                                 <span>
-                                    <img className="upImg disnone" src={up} alt="" />
+                                    <UpImgComp arg="upImg disnone" />
                                 </span>
                             </p>
                         </div>

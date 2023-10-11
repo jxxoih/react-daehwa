@@ -1,6 +1,6 @@
 import "styles/serviceCenter.css";
+import UpImgComp from "components/UpImgComp";
 
-import up from "assets/imgs/up.png";
 
 const ServiceCenter = () => {
     return (
@@ -22,7 +22,9 @@ const ServiceCenter = () => {
                             <p>
                                 <span className="mainTitle_m">고객센터</span>
                                 <span className="mainTitle_eng_m">Customer Center</span>
-                                <span><img className="upImg disnone" src={up} alt="" /></span>
+                                <span>
+                                    <UpImgComp arg="upImg disnone" />
+                                </span>
                             </p>
                         </div>
                     </div>

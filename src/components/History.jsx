@@ -1,6 +1,6 @@
 import "styles/company.css";
+import UpImgComp from "components/UpImgComp";
 
-import up from "assets/imgs/up.png";
 
 const History = () => {
     return (
@@ -22,7 +22,7 @@ const History = () => {
                             <p>
                                 <span className="mainTitle_m">회사소개</span>
                                 <span className="mainTitle_eng_m">Company</span>
-                                <span><img className="upImg disnone" src={up} alt="" /></span>
+                                <UpImgComp arg="upImg disnone" />
                             </p>
                         </div>
                     </div>

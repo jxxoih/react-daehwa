@@ -1,8 +1,9 @@
 import "styles/serviceCenter.css";
-import UpImgComp from "components/UpImgComp";
+import MoblieSelectBox from "./commons/MoblieSelectBox";
 
 
-const ServiceCenter = () => {
+const ServiceCenter = (props) => {
+
     return (
         <div>
             <div className="mainHeaderTitleContainer">
@@ -15,52 +16,7 @@ const ServiceCenter = () => {
                 </div>
             </div>
 
-            <div className="mainHeaderTitleContainer_m">
-                <div className="subMenuSelectBox">
-                    <div className="subMenuSelector_m">
-                        <div className="subMenuSelector" id="selectBox" onclick="selectBox();">
-                            <p>
-                                <span className="mainTitle_m">고객센터</span>
-                                <span className="mainTitle_eng_m">Customer Center</span>
-                                <span>
-                                    <UpImgComp arg="upImg disnone" />
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="subMenuOption_m disnone">
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption on" onclick="return false;">
-                                <p>고객문의</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('notice.html')">
-                                <p>공지사항</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('faq.html')">
-                                <p>자주묻는질문</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('question.html')">
-                                <p>1:1 문의하기</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('employment.html')">
-                                <p>인재채용</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content1">
@@ -88,7 +44,7 @@ const ServiceCenter = () => {
                                     E-mail. webmaster@daehwaind.com<br />
                                 </p>
                                 <div className="qna">
-                                    <button className="qnaBtn" onclick="clickQuestion();">1:1 문의하기</button>
+                                    <button className="qnaBtn" onClick={() => props.func(9)}>1:1 문의하기</button>
                                 </div>
                             </div>
                         </div>

@@ -219,9 +219,9 @@
     font-size: 1rem;
 }
 
-.hamMenuBar_m ul li:not(:first-child) {
+/* .hamMenuBar_m ul li:not(:first-child) {
     padding-bottom: 1rem;
-}
+} */
 
 
 @media screen and (max-width: 360px) {}

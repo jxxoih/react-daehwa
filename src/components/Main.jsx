@@ -9,6 +9,7 @@ import slide_img_m_3 from "assets/imgs/slide_img_m_3.png";
 const Main = () => {
     return (
         <div>
+            <h1>수정중...</h1>
             <div className="mainContentContainer">
                 <div className="sliderContainer">
                     <div className="swiper mySwiper mainSlider">

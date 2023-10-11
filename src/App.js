@@ -104,19 +104,39 @@ function App() {
         <Certificate />
       )}
       {curLoc == 6 && (
-        <ServiceCenter />
+        <ServiceCenter
+          func={MoveToUrl}
+          pageIdx={6}
+          num={3}
+        />
       )}
       {curLoc == 7 && (
-        <Notice />
+        <Notice
+          func={MoveToUrl}
+          pageIdx={7}
+          num={3}
+        />
       )}
       {curLoc == 8 && (
-        <Faq />
+        <Faq
+          func={MoveToUrl}
+          pageIdx={8}
+          num={3}
+        />
       )}
       {curLoc == 9 && (
-        <Question />
+        <Question
+          func={MoveToUrl}
+          pageIdx={9}
+          num={3}
+        />
       )}
       {curLoc == 10 && (
-        <Employment />
+        <Employment
+          func={MoveToUrl}
+          pageIdx={10}
+          num={3}
+        />
       )}
 
 

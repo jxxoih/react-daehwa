@@ -97,9 +97,9 @@ function App() {
       {curLoc == 3 && (
         <LocationMap />
       )}
-      {curLoc == 4 && (
+      {/* {curLoc == 4 && (
         <ProductInfo />
-      )}
+      )} */}
       {curLoc == 5 && (
         <Certificate />
       )}

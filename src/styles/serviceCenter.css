@@ -16,7 +16,7 @@
   transform: translate(-50%);
 }
 
-.mainContent > div {
+.mainContent.serviceCenter > div {
   width: 100%;
 }
 

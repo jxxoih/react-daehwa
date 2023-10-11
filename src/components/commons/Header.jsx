@@ -10,7 +10,7 @@ const Header = (props) => {
                 <div className="headerMenu">
                     <ul>
                         <li className="subMenuToggle">회사소개</li>
-                        <li className="subMenuToggle">제품소개</li>
+                        {/* <li className="subMenuToggle">제품소개</li> */}
                         <li className="subMenuToggle">인증서</li>
                         <li className="subMenuToggle">고객센터</li>
                     </ul>
@@ -29,11 +29,11 @@ const Header = (props) => {
                                 <li onClick={() => props.func(3)}>찾아오시는길</li>
                             </ul>
                         </li>
-                        <li>
+                        {/* <li>
                             <ul>
                                 <li onClick={() => props.func(4)}>제품소개</li>
                             </ul>
-                        </li>
+                        </li> */}
                         <li>
                             <ul>
                                 <li onClick={() => props.func(5)}>인증서</li>

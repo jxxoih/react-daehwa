@@ -17,12 +17,12 @@ const Footer = (props) => {
                                     <li onClick={() => props.func(3)}>찾아오시는 길</li>
                                 </ul>
                             </li>
-                            <li className="footerSitemapList">
+                            {/* <li className="footerSitemapList">
                                 <h2 className="footerMenu">제품소개</h2>
                                 <ul>
                                     <li onClick={() => props.func(4)}>제품소개</li>
                                 </ul>
-                            </li>
+                            </li> */}
                             <li className="footerSitemapList">
                                 <h2 className="footerMenu">인증서</h2>
                                 <ul>

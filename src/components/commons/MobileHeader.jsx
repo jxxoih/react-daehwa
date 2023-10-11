@@ -40,11 +40,11 @@ const MobileHeader = (props) => {
                         </li>
                     </ul>
 
-                    <ul>
+                    {/* <ul>
                         <li onClick={() => props.func(4)}>
                             <h2>제품소개</h2>
                         </li>
-                    </ul>
+                    </ul> */}
 
                     <ul>
                         <li onClick={() => props.func(5)}>

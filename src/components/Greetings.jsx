@@ -2,8 +2,9 @@ import "styles/company.css";
 
 import logo from "assets/imgs/logo.png";
 import UpImgComp from "components/UpImgComp";
+import MoblieSelectBox from "./commons/MoblieSelectBox";
 
-const Greetings = () => {
+const Greetings = (props) => {
     return (
         <div clas>
             <div className="mainHeaderTitleContainer">
@@ -16,42 +17,7 @@ const Greetings = () => {
                 </div>
             </div>
 
-            <div className="mainHeaderTitleContainer_m">
-                <div className="subMenuSelectBox">
-                    <div className="subMenuSelector_m">
-                        <div className="subMenuSelector" id="selectBox" onclick="selectBox();">
-                            <p>
-                                <span className="mainTitle_m">회사소개</span>
-                                <span className="mainTitle_eng_m">Company</span>
-                                <span>
-                                    <UpImgComp arg="upImg disnone" />
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="subMenuOption_m disnone">
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption on" onclick="return false;">
-                                <p>인사말</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('history.html')">
-                                <p>연혁</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('locationMap.html')">
-                                <p>찾아오시는길</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
+            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content1">

@@ -63,7 +63,9 @@ function App() {
   }, []);
 
   const MoveToUrl = (idx) => {
-    setCurLoc(idx);
+    if(curLoc !== idx) {
+      setCurLoc(idx);
+    }
   }
 
   return (
@@ -89,13 +91,25 @@ function App() {
         <Main />
       )}
       {curLoc == 1 && (
-        <Greetings />
+        <Greetings
+          func={MoveToUrl}
+          pageIdx={1}
+          num={0}
+        />
       )}
       {curLoc == 2 && (
-        <History />
+        <History
+          func={MoveToUrl}
+          pageIdx={2}
+          num={0}
+        />
       )}
       {curLoc == 3 && (
-        <LocationMap />
+        <LocationMap
+          func={MoveToUrl}
+          pageIdx={3}
+          num={0}
+        />
       )}
       {/* {curLoc == 4 && (
         <ProductInfo />
@@ -107,35 +121,35 @@ function App() {
         <ServiceCenter
           func={MoveToUrl}
           pageIdx={6}
-          num={3}
+          num={1}
         />
       )}
       {curLoc == 7 && (
         <Notice
           func={MoveToUrl}
           pageIdx={7}
-          num={3}
+          num={1}
         />
       )}
       {curLoc == 8 && (
         <Faq
           func={MoveToUrl}
           pageIdx={8}
-          num={3}
+          num={1}
         />
       )}
       {curLoc == 9 && (
         <Question
           func={MoveToUrl}
           pageIdx={9}
-          num={3}
+          num={1}
         />
       )}
       {curLoc == 10 && (
         <Employment
           func={MoveToUrl}
           pageIdx={10}
-          num={3}
+          num={1}
         />
       )}
 

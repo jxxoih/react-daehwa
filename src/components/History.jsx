@@ -1,8 +1,9 @@
 import "styles/company.css";
 import UpImgComp from "components/UpImgComp";
+import MoblieSelectBox from "./commons/MoblieSelectBox";
 
 
-const History = () => {
+const History = (props) => {
     return (
         <div>
             <div className="mainHeaderTitleContainer">
@@ -15,39 +16,7 @@ const History = () => {
                 </div>
             </div>
 
-            <div className="mainHeaderTitleContainer_m">
-                <div className="subMenuSelectBox">
-                    <div className="subMenuSelector_m">
-                        <div className="subMenuSelector" id="selectBox" onclick="selectBox();">
-                            <p>
-                                <span className="mainTitle_m">회사소개</span>
-                                <span className="mainTitle_eng_m">Company</span>
-                                <UpImgComp arg="upImg disnone" />
-                            </p>
-                        </div>
-                    </div>
-                    <div className="subMenuOption_m disnone">
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('greetings.html')">
-                                <p>인사말</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption on" onclick="return false;">
-                                <p>연혁</p>
-                            </div>
-                        </div>
-
-                        <div className="subMenuOptions">
-                            <div className="subMenuOption" onclick="moveToUrl('locationMap.html')">
-                                <p>찾아오시는길</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content2">

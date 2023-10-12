@@ -1,7 +1,8 @@
 import "styles/serviceCenter.css";
 import UpImgComp from "components/UpImgComp";
 import { useState } from "react";
-import MoblieSelectBox from "./commons/MoblieSelectBox";
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
+
 
 
 const Faq = (props) => {

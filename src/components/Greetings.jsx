@@ -1,8 +1,8 @@
 import "styles/company.css";
 
-import logo from "assets/imgs/logo.png";
-import UpImgComp from "components/UpImgComp";
-import MoblieSelectBox from "./commons/MoblieSelectBox";
+import logo from "assets/imgs/logo.png";import UpImgComp from "components/UpImgComp";
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
+
 
 const Greetings = (props) => {
     return (

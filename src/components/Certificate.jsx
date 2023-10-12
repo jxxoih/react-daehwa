@@ -4,11 +4,13 @@ import kr1 from "assets/imgs/kr1.png";
 import kr2 from "assets/imgs/kr2.png";
 import cn1 from "assets/imgs/cn1.png";
 import cn2 from "assets/imgs/cn2.png";
-import UpImgComp from "components/UpImgComp";
+
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
 
 
 
-const Certificate = () => {
+
+const Certificate = (props) => {
     return (
         <div>
             <div className="mainHeaderTitleContainer">
@@ -20,21 +22,8 @@ const Certificate = () => {
                     <p className="titleText2">Certificate</p>
                 </div>
             </div>
-            <div className="mainHeaderTitleContainer_m">
-                <div className="subMenuSelectBox">
-                    <div className="subMenuSelector_m">
-                        <div className="subMenuSelector" id="selectBox">
-                            <p>
-                                <span className="mainTitle_m">인증서</span>
-                                <span className="mainTitle_eng_m">Certificate</span>
-                                <span>
-                                    <UpImgComp arg="upImg disnone" />
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content1">

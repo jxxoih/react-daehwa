@@ -7,18 +7,21 @@ const MoblieSelectBox = (props) => {
     const [pageName, setPageName] = useState([{
         kr: "회사소개",
         en: "Company"
-    }, {
+    }, 
+    {
+        kr: "인증서",
+        en: "Certificate"
+    },
+    {
         kr: "고객센터",
         en: "Customer Center"
     }]);
 
     const selectBox = () => {
-        setPageSelectBox(!pageSelectBox)
+        if(props.num !== 1) {
+            setPageSelectBox(!pageSelectBox)
+        }
     };
-
-    const moveLoc = (arg) => {
-        props.func(arg);
-    }
 
     return (
         <div className="mainHeaderTitleContainer_m">
@@ -43,7 +46,7 @@ const MoblieSelectBox = (props) => {
                         <>
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 1 && "on"}`}
-                                    onClick={() => moveLoc(1)}
+                                    onClick={() => props.func(1)}
                                 >
                                     <p>인사말</p>
                                 </div>
@@ -51,7 +54,7 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 2 && "on"}`}
-                                    onClick={() => moveLoc(2)}
+                                    onClick={() => props.func(2)}
                                 >
                                     <p>연혁</p>
                                 </div>
@@ -59,18 +62,18 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 3 && "on"}`}
-                                    onClick={() => moveLoc(3)}
+                                    onClick={() => props.func(3)}
                                 >
                                     <p>찾아오시는길</p>
                                 </div>
                             </div>
                         </>
                     )}
-                    {pageSelectBox && props.num === 1 && (
+                    {pageSelectBox && props.num === 2 && (
                         <>
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 6 && "on"}`}
-                                    onClick={() => moveLoc(6)}
+                                    onClick={() => props.func(6)}
                                 >
                                     <p>고객문의</p>
                                 </div>
@@ -78,7 +81,7 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 7 && "on"}`}
-                                    onClick={() => moveLoc(7)}
+                                    onClick={() => props.func(7)}
                                 >
                                     <p>공지사항</p>
                                 </div>
@@ -86,7 +89,7 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 8 && "on"}`}
-                                    onClick={() => moveLoc(8)}
+                                    onClick={() => props.func(8)}
                                 >
                                     <p>자주묻는질문</p>
                                 </div>
@@ -94,7 +97,7 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 9 && "on"}`}
-                                    onClick={() => moveLoc(9)}
+                                    onClick={() => props.func(9)}
                                 >
                                     <p>1:1 문의하기</p>
                                 </div>
@@ -102,7 +105,7 @@ const MoblieSelectBox = (props) => {
 
                             <div className="subMenuOptions">
                                 <div className={`subMenuOption ${props.pageIdx === 10 && "on"}`}
-                                    onClick={() => moveLoc(10)}
+                                    onClick={() => props.func(10)}
                                 >
                                     <p>인재채용</p>
                                 </div>

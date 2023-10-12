@@ -1,5 +1,7 @@
 import "styles/serviceCenter.css";
-import MoblieSelectBox from "./commons/MoblieSelectBox";
+
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
+
 
 
 const ServiceCenter = (props) => {

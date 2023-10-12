@@ -1,6 +1,6 @@
 import "styles/company.css";
-import UpImgComp from "components/UpImgComp";
-import MoblieSelectBox from "./commons/MoblieSelectBox";
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
+
 
 
 const History = (props) => {

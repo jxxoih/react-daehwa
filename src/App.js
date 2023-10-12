@@ -115,41 +115,45 @@ function App() {
         <ProductInfo />
       )} */}
       {curLoc == 5 && (
-        <Certificate />
+        <Certificate
+        func={""}
+        pageIdx={4}
+        num={1}
+        />
       )}
       {curLoc == 6 && (
         <ServiceCenter
           func={MoveToUrl}
           pageIdx={6}
-          num={1}
+          num={2}
         />
       )}
       {curLoc == 7 && (
         <Notice
           func={MoveToUrl}
           pageIdx={7}
-          num={1}
+          num={2}
         />
       )}
       {curLoc == 8 && (
         <Faq
           func={MoveToUrl}
           pageIdx={8}
-          num={1}
+          num={2}
         />
       )}
       {curLoc == 9 && (
         <Question
           func={MoveToUrl}
           pageIdx={9}
-          num={1}
+          num={2}
         />
       )}
       {curLoc == 10 && (
         <Employment
           func={MoveToUrl}
           pageIdx={10}
-          num={1}
+          num={2}
         />
       )}
 

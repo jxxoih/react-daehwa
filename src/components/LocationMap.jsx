@@ -1,8 +1,8 @@
 import "styles/company.css";
 
 import location_m from "assets/imgs/location_m.png";
-import UpImgComp from "components/UpImgComp";
-import MoblieSelectBox from "./commons/MoblieSelectBox";
+import MoblieSelectBox from "components/commons/MoblieSelectBox";
+
 
 const LocationMap = (props) => {
     return (

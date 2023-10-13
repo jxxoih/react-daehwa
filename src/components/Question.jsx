@@ -1,8 +1,55 @@
+import { useState } from 'react';
+import styled from 'styled-components';
+
 import MoblieSelectBox from "components/commons/MoblieSelectBox";
 
 
-
 const Question = (props) => {
+    const ToggleContainer = styled.div`
+    position: relative;
+    cursor: pointer;
+    width: 60px;
+  
+    > .toggle-container {
+      width: 50px;
+      height: 24px;
+      border-radius: 30px;
+      background-color: rgb(233,233,234);}
+      //.toggle--checked 클래스가 활성화 되었을 경우의 CSS를 구현
+    > .toggle--checked {
+      background-color: #000255;
+      transition : 0.5s
+    }
+  
+    > .toggle-circle {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: rgb(255,254,255);
+      transition : 0.5s
+      //.toggle--checked 클래스가 활성화 되었을 경우의 CSS를 구현
+    } >.toggle--checked {
+      left: 27px;
+      transition : 0.5s
+    }
+  `;
+
+    const Desc = styled.div`
+    //설명 부분의 CSS를 구현
+    text-align: center;
+    margin: 20px;
+  `;
+
+    const [isOn, setisOn] = useState(false);
+
+    const toggleHandler = () => {
+        // isOn의 상태를 변경하는 메소드를 구현
+        setisOn(!isOn)
+    };
+
     return (
         <div>
             <div className="mainHeaderTitleContainer">
@@ -61,9 +108,9 @@ const Question = (props) => {
                                             </div>
                                             <div className="bizDivision">
                                                 <input type="radio" name="faqRadio" id="wholesale" />
-                                                <label for="wholesale">도매업</label>
+                                                <label htmlFor="wholesale">도매업</label>
                                                 <input type="radio" name="faqRadio" id="retail" />
-                                                <label for="retail">소매업</label>
+                                                <label htmlFor="retail">소매업</label>
                                             </div>
                                         </div>
                                     </div>
@@ -135,17 +182,16 @@ const Question = (props) => {
                                         </div>
                                     </div>
 
-                                    <div className="radioCheck">
-                                        <div>
-                                            <input type="checkbox" name="radioCheck" id="radioCheck" onchange="aa(1)" hidden />
-                                            <input type="radio" name="check" className="check" id="radio1" onclick="aa(2);" />
-                                            <input type="radio" name="check" className="check" id="radio2" hidden />
-
-                                            <label for="radioCheck" className="radioCheckLabel">
-                                                개인정보 수집 및 이용 동의 개인정보취급방침
-                                            </label>
-                                        </div>
+                                    <div className='toggleBtnDiv'>
+                                        <ToggleContainer
+                                            onClick={toggleHandler}
+                                        >
+                                            <div className={`toggle-container ${isOn ? "toggle--checked" : null}`} />
+                                            <div className={`toggle-circle ${isOn ? "toggle--checked" : null}`} />
+                                        </ToggleContainer>
+                                        <span className='radioCheckLabel'>개인정보 수집 및 이용 동의</span>
                                     </div>
+
 
                                     <div className="sendBtnFrame">
                                         <div className="sendBtn">

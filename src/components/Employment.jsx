@@ -47,7 +47,7 @@ const Employment = (props) => {
                                         <p>대화공업은 리벳트 및 스크류 부품을 생산하는 기업입니다.</p>
                                     </div>
                                     <div className="emplymentImgBtn">
-                                        <button onclick="moveToUrl('question.html')">문의하기</button>
+                                        <button onClick={() => props.func(9)}>문의하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const Employment = (props) => {
                                         <p>대화공업은 리벳트 및 스크류 부품을 <br />생산하는 기업입니다.</p>
                                     </div>
                                     <div className="emplymentImgBtn">
-                                        <button onclick="moveToUrl('question.html')">문의하기</button>
+                                        <button onClick={() => props.func(9)}>문의하기</button>
                                     </div>
                                 </div>
                             </div>

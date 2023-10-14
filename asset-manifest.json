@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.c33443a1.css",
-    "main.js": "/react-portfolio/static/js/main.d23b334c.js",
+    "main.css": "/react-portfolio/static/css/main.10741b7e.css",
+    "main.js": "/react-portfolio/static/js/main.6c6cf1c4.js",
     "static/js/787.aeca62f9.chunk.js": "/react-portfolio/static/js/787.aeca62f9.chunk.js",
     "static/media/title3.png": "/react-portfolio/static/media/title3.43e509281888da405d2e.png",
     "static/media/article_img1.png": "/react-portfolio/static/media/article_img1.6ec8c08acfa9d11dc6ad.png",
@@ -23,18 +23,24 @@
     "static/media/slide_img_3.jpg": "/react-portfolio/static/media/slide_img_3.a90049fedd493dfe9546.jpg",
     "static/media/logo.png": "/react-portfolio/static/media/logo.97f0478d0469b67b32d2.png",
     "static/media/telephone_w.svg": "/react-portfolio/static/media/telephone_w.6c8034865dca86fd4a00.svg",
+    "static/media/headphones.svg": "/react-portfolio/static/media/headphones.99db6f6d72a6486f0257153071c77291.svg",
     "static/media/headphones_w.svg": "/react-portfolio/static/media/headphones_w.d44b19e44e96888f8ae6.svg",
+    "static/media/telephone.svg": "/react-portfolio/static/media/telephone.2ca4505d529e6e602a138d01c4fe7ccb.svg",
+    "static/media/newspaper.svg": "/react-portfolio/static/media/newspaper.995e9aa90229fce634cc3ca27d038239.svg",
     "static/media/newspaper_w.svg": "/react-portfolio/static/media/newspaper_w.32d406c847084b9e0773.svg",
+    "static/media/user.svg": "/react-portfolio/static/media/user.036a23fed35fbfd6f18d0638d6d8e661.svg",
     "static/media/user_w.svg": "/react-portfolio/static/media/user_w.6875ddbf01613a97da03.svg",
+    "static/media/placeholder.svg": "/react-portfolio/static/media/placeholder.7e675bf9d775fd2c15df9823878f438e.svg",
     "static/media/placeholder_w.svg": "/react-portfolio/static/media/placeholder_w.8f51da4fd0659980683a.svg",
+    "static/media/favorite.svg": "/react-portfolio/static/media/favorite.f2b0f61dbc8aa9c54cab9ffaca0ddaf0.svg",
     "static/media/favorite_w.svg": "/react-portfolio/static/media/favorite_w.2ed78027a6b3b7080f73.svg",
     "index.html": "/react-portfolio/index.html",
-    "main.c33443a1.css.map": "/react-portfolio/static/css/main.c33443a1.css.map",
-    "main.d23b334c.js.map": "/react-portfolio/static/js/main.d23b334c.js.map",
+    "main.10741b7e.css.map": "/react-portfolio/static/css/main.10741b7e.css.map",
+    "main.6c6cf1c4.js.map": "/react-portfolio/static/js/main.6c6cf1c4.js.map",
     "787.aeca62f9.chunk.js.map": "/react-portfolio/static/js/787.aeca62f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c33443a1.css",
-    "static/js/main.d23b334c.js"
+    "static/css/main.10741b7e.css",
+    "static/js/main.6c6cf1c4.js"
   ]
 }

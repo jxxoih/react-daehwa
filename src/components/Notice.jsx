@@ -38,17 +38,12 @@ const Notice = (props) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onclick="articleDetail(3);">
-                                        <td>3</td>
-                                        <td>영상</td>
-                                        <td>2023-06-16</td>
-                                    </tr>
-                                    <tr onclick="articleDetail(2);">
+                                    <tr onClick={()=> props.func(11, 1)}>
                                         <td>2</td>
                                         <td>안전신문, 대화공업 무재해 7배 달성</td>
                                         <td>2023-01-25</td>
                                     </tr>
-                                    <tr onclick="articleDetail(1);">
+                                    <tr onClick={()=> props.func(11, 0)}>
                                         <td>1</td>
                                         <td>대화공업 소개페이지 입니다.</td>
                                         <td>2023-01-25</td>
@@ -58,7 +53,7 @@ const Notice = (props) => {
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="3">
+                                        <td colSpan="3">
                                         </td>
                                     </tr>
                                 </tfoot>

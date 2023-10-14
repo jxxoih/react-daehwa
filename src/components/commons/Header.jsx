@@ -1,6 +1,38 @@
 import Logo from "assets/imgs/logo.png";
+import { useEffect, useState } from "react";
 
 const Header = (props) => {
+    const [headerStat, setHeaderStat] = useState(false);
+
+    const mouseOver = () => {
+        setTimeout(() => {
+            setHeaderStat(true);
+        }, 0);
+    }
+
+    const mouseOut = () => {
+        setTimeout(() => {
+            setHeaderStat(false);
+        }, 0);
+    }
+
+    useEffect(() => {
+        const target = document.querySelector(".header");
+
+        target.addEventListener("mouseover", () => {
+            mouseOver();
+        });
+        target.addEventListener("mouseleave", () => {
+            mouseOut();
+        });
+
+        return () => {
+            target.removeEventListener('mouseover', mouseOver);
+            target.removeEventListener('mouseleave', mouseOver);
+        }
+
+    }, [])
+
     return (
         <div className="header">
             <div className="headerContainer1">
@@ -16,7 +48,7 @@ const Header = (props) => {
                     </ul>
                 </div>
             </div>
-            <div className="headerContainer2">
+            <div className={`headerContainer2 ${headerStat ? "vOn" : "vOff disnone"}`}>
                 <div className="headerLogo">
                     &nbsp;
                 </div>

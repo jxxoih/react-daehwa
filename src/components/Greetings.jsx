@@ -1,12 +1,12 @@
 import "styles/company.css";
 
-import logo from "assets/imgs/logo.png";import UpImgComp from "components/UpImgComp";
+import logo from "assets/imgs/logo.png";
 import MoblieSelectBox from "components/commons/MoblieSelectBox";
 
 
 const Greetings = (props) => {
     return (
-        <div clas>
+        <div>
             <div className="mainHeaderTitleContainer">
                 <div className="mainHeaderTitleContainerImg">
                     &nbsp;

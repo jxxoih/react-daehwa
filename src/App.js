@@ -15,7 +15,6 @@ import "styles/footer.css";
 import Main from "components/Main";
 import Greetings from "components/Greetings";
 import LocationMap from "components/LocationMap";
-import ProductInfo from "components/ProductInfo";
 import Certificate from "components/Certificate";
 import ServiceCenter from "components/ServiceCenter";
 import Notice from "components/Notice";
@@ -23,12 +22,14 @@ import Faq from "components/Faq";
 import Question from "components/Question";
 import Employment from "components/Employment";
 import History from "components/History";
+import NoticeDetail from "components/NoticeDetail";
 
 
 function App() {
   const [isMobile, setIsMobile] = useState(null);
   const [curLoc, setCurLoc] = useState(0);
   const [isScroll, setIsScroll] = useState(false);
+  const [notiNum, setNotiNum] = useState(null);
 
   useEffect(() => {
     function topBtn() {
@@ -62,8 +63,15 @@ function App() {
     }
   }, []);
 
-  const MoveToUrl = (idx) => {
-    if(curLoc !== idx) {
+  const MoveToUrl = (idx, nNum) => {
+    if(isMobile) {
+        eventUtil.closeMenu();
+    }
+
+    setNotiNum(nNum);
+
+    if (curLoc !== idx) {
+      eventUtil.topScroll();
       setCurLoc(idx);
     }
   }
@@ -87,73 +95,81 @@ function App() {
         </div>
       )}
 
-      {curLoc == 0 && (
+      {curLoc === 0 && (
         <Main />
       )}
-      {curLoc == 1 && (
+      {curLoc === 1 && (
         <Greetings
           func={MoveToUrl}
           pageIdx={1}
           num={0}
         />
       )}
-      {curLoc == 2 && (
+      {curLoc === 2 && (
         <History
           func={MoveToUrl}
           pageIdx={2}
           num={0}
         />
       )}
-      {curLoc == 3 && (
+      {curLoc === 3 && (
         <LocationMap
           func={MoveToUrl}
           pageIdx={3}
           num={0}
         />
       )}
-      {/* {curLoc == 4 && (
+      {/* {curLoc === 4 && (
         <ProductInfo />
       )} */}
-      {curLoc == 5 && (
+      {curLoc === 5 && (
         <Certificate
-        func={""}
-        pageIdx={4}
-        num={1}
+          func={""}
+          pageIdx={4}
+          num={1}
         />
       )}
-      {curLoc == 6 && (
+      {curLoc === 6 && (
         <ServiceCenter
           func={MoveToUrl}
           pageIdx={6}
           num={2}
         />
       )}
-      {curLoc == 7 && (
+      {curLoc === 7 && (
         <Notice
           func={MoveToUrl}
           pageIdx={7}
           num={2}
         />
       )}
-      {curLoc == 8 && (
+      {curLoc === 8 && (
         <Faq
           func={MoveToUrl}
           pageIdx={8}
           num={2}
         />
       )}
-      {curLoc == 9 && (
+      {curLoc === 9 && (
         <Question
           func={MoveToUrl}
           pageIdx={9}
           num={2}
         />
       )}
-      {curLoc == 10 && (
+      {curLoc === 10 && (
         <Employment
           func={MoveToUrl}
           pageIdx={10}
           num={2}
+        />
+      )}
+      {curLoc === 11 && (
+        <NoticeDetail
+          func={MoveToUrl}
+          pageIdx={11}
+          num={2}
+          notiNum={notiNum}
         />
       )}
 

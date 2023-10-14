@@ -1,28 +1,15 @@
 import closeBtn from "assets/imgs/hambutton_x_m.png";
 import menuBtn from "assets/imgs/hambutton.png";
 import logo from "assets/imgs/logo_m.png";
+import eventUtil from "utils/common.js";
 
-const closeMenu = () => {
-    let submenu_m = document.querySelector(".headerContainer2_m");
-    if (!!submenu_m) {
-        submenu_m.classList.toggle("vMOn");
-        submenu_m.classList.toggle("vMOff");
-    }
-};
-const openMenu = () => {
-    let submenu_m = document.querySelector(".headerContainer2_m");
-    if (!!submenu_m) {
-        submenu_m.classList.toggle("vMOn");
-        submenu_m.classList.toggle("vMOff");
-    }
-};
 
 const MobileHeader = (props) => {
     return (
         <div className="header_m">
             <div className="headerContainer2_m vMOff">
                 <div className="hambutton_x_m">
-                    <img src={closeBtn} alt="close" onClick={closeMenu} />
+                    <img src={closeBtn} alt="close" onClick={eventUtil.closeMenu} />
                 </div>
                 <div className="hamMenuBar_m">
                     <ul>
@@ -78,7 +65,7 @@ const MobileHeader = (props) => {
                 <div className="headerLogo_m">
                     <img className="headerLogoImg_m" src={logo} alt="logo" onClick={() => props.func(0)} />
                 </div>
-                <div className="headerMenuBar_m" onClick={openMenu}>
+                <div className="headerMenuBar_m" onClick={eventUtil.openMenu}>
                     <img src={menuBtn} alt="hambtn" />
                 </div>
             </div>

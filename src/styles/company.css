@@ -5,7 +5,7 @@
   opacity: 0.6;
 }
 
-.mainContent {
+.mainContent.greetingsContent {
     width: 90vw;
     max-width: 1000px;
     position: relative;

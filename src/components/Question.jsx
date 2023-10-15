@@ -72,7 +72,7 @@ const Question = (props) => {
                     </div>
 
 
-                    <div className="mainContent">
+                    <div className="mainContent serviceCenter">
                         <div className="questionContainer">
                             <div>
                                 <div className="questionGuide">

@@ -5,7 +5,7 @@
     opacity: 0.6;
 }
 
-.mainContent {
+.mainContent.certificate {
     display: flex;
     justify-content: center;
 }

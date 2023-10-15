@@ -10,15 +10,15 @@ const topScroll = () => {
 const closeMenu = () => {
     let submenu_m = document.querySelector(".headerContainer2_m");
     if (!!submenu_m) {
-        submenu_m.classList.toggle("vMOn");
-        submenu_m.classList.toggle("vMOff");
+        submenu_m.classList.remove("vMOn");
+        submenu_m.classList.add("vMOff");
     }
 };
 const openMenu = () => {
     let submenu_m = document.querySelector(".headerContainer2_m");
     if (!!submenu_m) {
-        submenu_m.classList.toggle("vMOn");
-        submenu_m.classList.toggle("vMOff");
+        submenu_m.classList.add("vMOn");
+        submenu_m.classList.remove("vMOff");
     }
 };
 

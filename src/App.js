@@ -64,8 +64,8 @@ function App() {
   }, []);
 
   const MoveToUrl = (idx, nNum) => {
-    if(isMobile) {
-        eventUtil.closeMenu();
+    if (isMobile) {
+      eventUtil.closeMenu();
     }
 
     setNotiNum(nNum);
@@ -96,7 +96,10 @@ function App() {
       )}
 
       {curLoc === 0 && (
-        <Main />
+        <Main
+          moblieStat={isMobile}
+          func={MoveToUrl}
+        />
       )}
       {curLoc === 1 && (
         <Greetings

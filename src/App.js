@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import NotFound from "pages/NotFound";
 
@@ -9,20 +9,22 @@ import "styles/common.css";
 import "styles/header.css";
 import "styles/footer.css";
 
-import Main from "components/Main";
-import Greetings from "components/Greetings";
-import LocationMap from "components/LocationMap";
-import Certificate from "components/Certificate";
-import ServiceCenter from "components/ServiceCenter";
-import Notice from "components/Notice";
-import Faq from "components/Faq";
-import Question from "components/Question";
-import Employment from "components/Employment";
-import History from "components/History";
-import NoticeDetail from "components/NoticeDetail";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import MainLayout from "components/commons/MainLayout";
+import { Suspense } from "react";
 
+// import Main from "components/Main";
+const Main = React.lazy(() => import('components/Main'))
+const Greetings = React.lazy(() => import('components/Greetings'));
+const LocationMap = React.lazy(() => import('components/LocationMap'));
+const Certificate = React.lazy(() => import('components/Certificate'));
+const ServiceCenter = React.lazy(() => import('components/ServiceCenter'));
+const Notice = React.lazy(() => import('components/Notice'));
+const Faq = React.lazy(() => import('components/Faq'));
+const Question = React.lazy(() => import('components/Question'));
+const Employment = React.lazy(() => import('components/Employment'));
+const History = React.lazy(() => import('components/History'));
+const NoticeDetail = React.lazy(() => import('components/NoticeDetail'));
 
 
 function App() {
@@ -100,15 +102,15 @@ function App() {
 
     setNotiNum(nNum);
 
-    if(curLoc === 0) {
+    if (curLoc === 0) {
       navigate("/");
     }
 
-    if (curLoc !== idx) {
+    if (curLoc !== idx && nNum) {
       eventUtil.topScroll();
-      setCurLoc(idx);
-      navigate(pathArr[idx])
     }
+    setCurLoc(idx);
+    navigate(pathArr[idx])
   }
 
   return (
@@ -118,108 +120,110 @@ function App() {
           <img src={topBtn} alt="topBtn" />
         </div>
       )}
-      <Routes>
-        <Route element={<MainLayout func={MoveToUrl} />}>
+      <Suspense>
+        <Routes>
+          <Route element={<MainLayout func={MoveToUrl} />}>
+            <Route
+              path={mainPath}
+              element={<Main
+                moblieStat={isMobile}
+                func={MoveToUrl}
+              />}
+            />
+            <Route
+              path={greetingsPath}
+              element={<Greetings
+                func={MoveToUrl}
+                pageIdx={1}
+                num={0}
+              />}
+            />
+            <Route
+              path={historyPath}
+              element={<History
+                func={MoveToUrl}
+                pageIdx={2}
+                num={0}
+              />}
+            />
+            <Route
+              path={locMapPath}
+              element={<LocationMap
+                func={MoveToUrl}
+                pageIdx={3}
+                num={0}
+              />}
+            />
+            <Route
+              path={certificatePath}
+              element={<Certificate
+                func={""}
+                pageIdx={4}
+                num={1}
+              />}
+            />
+            <Route
+              path={serviceCenterPath}
+              element={<ServiceCenter
+                func={MoveToUrl}
+                pageIdx={6}
+                num={2}
+              />}
+            />
+            <Route
+              path={noticePath}
+              element={<Notice
+                func={MoveToUrl}
+                pageIdx={7}
+                num={2}
+              />}
+            />
+            <Route
+              path={noticeDetailPath}
+              element={<NoticeDetail
+                func={MoveToUrl}
+                pageIdx={11}
+                num={2}
+                notiNum={notiNum}
+              />}
+            />
+            <Route
+              path={faqPath}
+              element={<Faq
+                func={MoveToUrl}
+                pageIdx={8}
+                num={2}
+              />}
+            />
+            <Route
+              path={questionPath}
+              element={
+                <Question
+                  func={MoveToUrl}
+                  pageIdx={9}
+                  num={2}
+                />
+              }
+            />
+            <Route
+              path={employmentPath}
+              element={
+                <Employment
+                  func={MoveToUrl}
+                  pageIdx={10}
+                  num={2}
+                />
+              }
+            />
+          </Route>
 
           <Route
-            path={mainPath}
-            element={<Main
-              moblieStat={isMobile}
-              func={MoveToUrl}
-            />}
+            path="*"
+            element={<NotFound func={MoveToUrl} />}
           />
-          <Route
-            path={greetingsPath}
-            element={<Greetings
-              func={MoveToUrl}
-              pageIdx={1}
-              num={0}
-            />}
-          />
-          <Route
-            path={historyPath}
-            element={<History
-              func={MoveToUrl}
-              pageIdx={2}
-              num={0}
-            />}
-          />
-          <Route
-            path={locMapPath}
-            element={<LocationMap
-              func={MoveToUrl}
-              pageIdx={3}
-              num={0}
-            />}
-          />
-          <Route
-            path={certificatePath}
-            element={<Certificate
-              func={""}
-              pageIdx={4}
-              num={1}
-            />}
-          />
-          <Route
-            path={serviceCenterPath}
-            element={<ServiceCenter
-              func={MoveToUrl}
-              pageIdx={6}
-              num={2}
-            />}
-          />
-          <Route
-            path={noticePath}
-            element={<Notice
-              func={MoveToUrl}
-              pageIdx={7}
-              num={2}
-            />}
-          />
-          <Route
-            path={noticeDetailPath}
-            element={<NoticeDetail
-              func={MoveToUrl}
-              pageIdx={11}
-              num={2}
-              notiNum={notiNum}
-            />}
-          />
-          <Route
-            path={faqPath}
-            element={<Faq
-              func={MoveToUrl}
-              pageIdx={8}
-              num={2}
-            />}
-          />
-          <Route
-            path={questionPath}
-            element={
-              <Question
-                func={MoveToUrl}
-                pageIdx={9}
-                num={2}
-              />
-            }
-          />
-          <Route
-            path={employmentPath}
-            element={
-              <Employment
-                func={MoveToUrl}
-                pageIdx={10}
-                num={2}
-              />
-            }
-          />
-        </Route>
+        </Routes>
+      </Suspense>
 
-        <Route
-          path="*"
-          element={<NotFound func={MoveToUrl} />}
-        />
-      </Routes>
     </div>
   );
 }

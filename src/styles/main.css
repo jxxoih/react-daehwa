@@ -164,20 +164,13 @@
     background-color: #FFFFFF;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 
 .imgFrame:hover {
     background-color: #000255;
 }
-
-.imgFrame:hover ~ svg.testa {
-    fill: hotpink;
-}
-
-
-
 
 .imgFrame-headphones:hover img {
     content: url("assets/imgs/headphones_w.svg");

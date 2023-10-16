@@ -7,6 +7,11 @@ import slide_img_m_2 from "assets/imgs/slide_img_m_2.png";
 import slide_img_3 from "assets/imgs/slide_img_3.jpg";
 import slide_img_m_3 from "assets/imgs/slide_img_m_3.png";
 
+import product1 from "assets/imgs/product1.png";
+import product2 from "assets/imgs/product2.png";
+import product3 from "assets/imgs/product3.png";
+import product4 from "assets/imgs/product4.png";
+
 import headphones from "assets/imgs/headphones.svg";
 import newspaper from "assets/imgs/newspaper.svg";
 import favorite from "assets/imgs/favorite.svg";
@@ -27,19 +32,23 @@ const Main = (props) => {
     const imgsUrl = "assets/imgs/";
     const mainProductObj = [
         {
-            img: "product1.png",
+            idx: 0,
+            img: product1,
             name: "칼라피스",
         },
         {
-            img: "product2.png",
+            idx: 1,
+            img: product2,
             name: "육각머리 직결피스",
         },
         {
-            img: "product3.png",
+            idx: 2,
+            img: product3,
             name: "알루미늄리벳",
         },
         {
-            img: "product4.png",
+            idx: 3,
+            img: product4,
             name: "와샤머리(W)",
         },
     ];
@@ -139,11 +148,11 @@ const Main = (props) => {
                             >
 
                                 <div className="swiper-wrapper mainProductSlider">
-                                    {mainProductObj.map((item) => (
-                                        <SwiperSlide className="productList">
+                                    {mainProductObj.map(item => (
+                                        <SwiperSlide className="productList" key={item.idx}>
                                             <div className="product">
                                                 <div>
-                                                    <img src={`${imgsUrl}${item.img}`} alt="상품이미지" />
+                                                    <img src={item.img} alt="상품이미지" />
                                                 </div>
                                                 <div className="productNm">
                                                     <span>{item.name}</span>
@@ -161,10 +170,10 @@ const Main = (props) => {
                                 spaceBetween={30}
                                 freeMode={true}
                             >
-                                {mainProductObj.map((item) => (
-                                    <SwiperSlide className="productSlide_m">
+                                {mainProductObj.map(item => (
+                                    <SwiperSlide className="productSlide_m" key={item.idx}>
                                         <div>
-                                            <img src={`${imgsUrl}${item.img}`} alt="상품이미지" />
+                                            <img src={item.img} alt="상품이미지" />
                                         </div>
                                         <div className="productNm">
                                             <span>{item.name}</span>
@@ -176,82 +185,82 @@ const Main = (props) => {
                     </div>
                 </div>
 
-                <div class="mainContent serviceContainer">
+                <div className="mainContent serviceContainer">
                     <div>
-                        <div class="containerTitle">
+                        <div className="containerTitle">
                             <p>
-                                <span class="containerTitleKR">고객지원</span>
-                                <span class="containerTitleEng">Customer Service</span>
+                                <span className="containerTitleKR">고객지원</span>
+                                <span className="containerTitleEng">Customer Service</span>
                             </p>
-                            <p class="containerComment">궁금한 사항은 언제든지 문의 해주세요!</p>
+                            <p className="containerComment">궁금한 사항은 언제든지 문의 해주세요!</p>
                         </div>
 
-                        <div class="mainWrapper mainWrapper_service">
+                        <div className="mainWrapper mainWrapper_service">
                             <div>
-                                <div class="serviceList">
-                                    <div class="service1">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-headphones"
+                                <div className="serviceList">
+                                    <div className="service1">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-headphones"
                                                 onClick={() => props.func(6)}>
-                                                <img src={headphones} loading="lazy" />
+                                                <img src={headphones} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>고객문의</span>
                                         </div>
                                     </div>
-                                    <div class="service1">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
-                                                <img src={newspaper} loading="lazy" />
+                                    <div className="service1">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
+                                                <img src={newspaper} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>공지사항</span>
                                         </div>
                                     </div>
-                                    <div class="service1">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
-                                                <img src={favorite} loading="lazy" />
+                                    <div className="service1">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
+                                                <img src={favorite} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>자주묻는 질문</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="serviceList">
-                                    <div class="service2">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-telephone" onClick={() => props.func(9)}>
-                                                <img src={telephone} loading="lazy" />
+                                <div className="serviceList">
+                                    <div className="service2">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-telephone" onClick={() => props.func(9)}>
+                                                <img src={telephone} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>1:1 문의하기</span>
                                         </div>
                                     </div>
-                                    <div class="service2">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-placeholder"
+                                    <div className="service2">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-placeholder"
                                                 onClick={() => props.func(3)}>
-                                                <img src={placeholder} loading="lazy" />
+                                                <img src={placeholder} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>오시는 길</span>
                                         </div>
                                     </div>
-                                    <div class="service2">
-                                        <div class="serviceImg">
-                                            <div class="imgFrame imgFrame-user"
+                                    <div className="service2">
+                                        <div className="serviceImg">
+                                            <div className="imgFrame imgFrame-user"
                                                 onClick={() => props.func(10)}
                                             >
-                                                <img src={user} loading="lazy" />
+                                                <img src={user} />
                                             </div>
                                         </div>
-                                        <div class="serviceNm">
+                                        <div className="serviceNm">
                                             <span>인재채용</span>
                                         </div>
                                     </div>
@@ -259,72 +268,72 @@ const Main = (props) => {
                             </div>
                         </div>
 
-                        <div class="mainWrapper_service_m">
+                        <div className="mainWrapper_service_m">
                             <div>
-                                <div class="serviceList_m">
-                                    <div class="service_m">
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-headphones"
+                                <div className="serviceList_m">
+                                    <div className="service_m">
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-headphones"
                                                     onClick={() => props.func(6)}>
                                                     <img src={headphones} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>고객문의</span>
                                             </div>
                                         </div>
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
                                                     <img src={newspaper} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>공지사항</span>
                                             </div>
                                         </div>
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
                                                     <img src={favorite} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>자주묻는 질문</span>
                                             </div>
                                         </div>
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-telephone"
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-telephone"
                                                     onClick={() => props.func(9)}>
                                                     <img src={telephone} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>1:1 문의하기</span>
                                             </div>
                                         </div>
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-placeholder"
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-placeholder"
                                                     onClick={() => props.func(3)}>
                                                     <img src={placeholder} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>오시는 길</span>
                                             </div>
                                         </div>
-                                        <div class="service1">
-                                            <div class="serviceImg">
-                                                <div class="imgFrame imgFrame-user"
+                                        <div className="service1">
+                                            <div className="serviceImg">
+                                                <div className="imgFrame imgFrame-user"
                                                     onClick={() => props.func(10)}
                                                 >
                                                     <img src={user} />
                                                 </div>
                                             </div>
-                                            <div class="serviceNm">
+                                            <div className="serviceNm">
                                                 <span>인재채용</span>
                                             </div>
                                         </div>

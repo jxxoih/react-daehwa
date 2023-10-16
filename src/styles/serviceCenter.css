@@ -616,8 +616,9 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 768px) {
-  .mainContent.serviceCEnter,
-  .mainContent.employmentMain {
+  .mainContent.serviceCenter
+  /* ,.mainContent.employmentMain  */
+  {
     width: 95%;
   }
 

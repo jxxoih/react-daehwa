@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ffdb16d.css",
-    "main.js": "/static/js/main.70c40155.js",
+    "main.css": "/static/css/main.129f1ac2.css",
+    "main.js": "/static/js/main.33f24bc2.js",
     "static/js/787.aeca62f9.chunk.js": "/static/js/787.aeca62f9.chunk.js",
     "static/media/title3.png": "/static/media/title3.43e509281888da405d2e.png",
     "static/media/article_img1.png": "/static/media/article_img1.6ec8c08acfa9d11dc6ad.png",
@@ -26,25 +26,19 @@
     "static/media/product3.png": "/static/media/product3.08fdac08113ca4eb8d73.png",
     "static/media/slide_img_3.jpg": "/static/media/slide_img_3.a90049fedd493dfe9546.jpg",
     "static/media/logo.png": "/static/media/logo.97f0478d0469b67b32d2.png",
-    "static/media/telephone_w.svg": "/static/media/telephone_w.6c8034865dca86fd4a00.svg",
     "static/media/headphones.svg": "/static/media/headphones.99db6f6d72a6486f0257153071c77291.svg",
-    "static/media/headphones_w.svg": "/static/media/headphones_w.d44b19e44e96888f8ae6.svg",
     "static/media/telephone.svg": "/static/media/telephone.2ca4505d529e6e602a138d01c4fe7ccb.svg",
     "static/media/newspaper.svg": "/static/media/newspaper.995e9aa90229fce634cc3ca27d038239.svg",
-    "static/media/newspaper_w.svg": "/static/media/newspaper_w.32d406c847084b9e0773.svg",
     "static/media/user.svg": "/static/media/user.036a23fed35fbfd6f18d0638d6d8e661.svg",
-    "static/media/user_w.svg": "/static/media/user_w.6875ddbf01613a97da03.svg",
     "static/media/placeholder.svg": "/static/media/placeholder.7e675bf9d775fd2c15df9823878f438e.svg",
-    "static/media/placeholder_w.svg": "/static/media/placeholder_w.8f51da4fd0659980683a.svg",
     "static/media/favorite.svg": "/static/media/favorite.f2b0f61dbc8aa9c54cab9ffaca0ddaf0.svg",
-    "static/media/favorite_w.svg": "/static/media/favorite_w.2ed78027a6b3b7080f73.svg",
     "index.html": "/index.html",
-    "main.1ffdb16d.css.map": "/static/css/main.1ffdb16d.css.map",
-    "main.70c40155.js.map": "/static/js/main.70c40155.js.map",
+    "main.129f1ac2.css.map": "/static/css/main.129f1ac2.css.map",
+    "main.33f24bc2.js.map": "/static/js/main.33f24bc2.js.map",
     "787.aeca62f9.chunk.js.map": "/static/js/787.aeca62f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ffdb16d.css",
-    "static/js/main.70c40155.js"
+    "static/css/main.129f1ac2.css",
+    "static/js/main.33f24bc2.js"
   ]
 }

@@ -29,7 +29,6 @@ import "swiper/css/pagination"
 
 
 const Main = (props) => {
-    const imgsUrl = "assets/imgs/";
     const mainProductObj = [
         {
             idx: 0,

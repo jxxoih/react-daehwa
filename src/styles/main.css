@@ -227,6 +227,11 @@
     margin-left: 0.25rem;
 }
 
+.productSlider {
+    width: 100%;
+    max-width: 1000px;
+}
+
 @media screen and (max-width: 768px) {
     .productSlider {
         display: none;

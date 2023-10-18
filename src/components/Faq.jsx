@@ -1,7 +1,7 @@
 import "styles/serviceCenter.css";
 import UpImgComp from "components/UpImgComp";
 import { useState } from "react";
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 
 
@@ -29,7 +29,7 @@ const Faq = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content4">

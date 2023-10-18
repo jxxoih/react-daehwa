@@ -1,6 +1,6 @@
 import employment from "assets/imgs/employment.png";
 import employment_m from "assets/imgs/employment_m.png";
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 const Employment = (props) => {
     return (
@@ -16,7 +16,7 @@ const Employment = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content1">

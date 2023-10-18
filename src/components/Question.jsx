@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 
 const Question = (props) => {
@@ -62,7 +62,7 @@ const Question = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content3">

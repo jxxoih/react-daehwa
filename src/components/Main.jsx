@@ -25,6 +25,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+import { useState } from "react";
 
 
 
@@ -52,6 +53,19 @@ const Main = (props) => {
         },
     ];
 
+    const [isHover, setIsHover] = useState([false, false, false, false, false, false]);
+
+    const handleMouseOver = (idx) => {
+        isHover[idx] = true;
+
+        setIsHover([...isHover]);
+    }
+
+    const handleMouseOut = (idx) => {
+        isHover[idx] = false;
+
+        setIsHover([...isHover]);
+    }
 
     return (
         <div>
@@ -136,7 +150,7 @@ const Main = (props) => {
                     </div>
 
                     <div className="mainWrapper">
-                        {!props.moblieStat && (
+                        {!props.mobileStat && (
 
                             <Swiper
                                 className="mySwiper productSlider"
@@ -162,7 +176,7 @@ const Main = (props) => {
                                 </div>
                             </Swiper>
                         )}
-                        {props.moblieStat && (
+                        {props.mobileStat && (
                             <Swiper
                                 className="mySwiper productContainer_m"
                                 slidesPerView={1.2}
@@ -193,89 +207,24 @@ const Main = (props) => {
                             </p>
                             <p className="containerComment">궁금한 사항은 언제든지 문의 해주세요!</p>
                         </div>
+                        {!props.mobileStat && (
 
-                        <div className="mainWrapper mainWrapper_service">
-                            <div>
-                                <div className="serviceList">
-                                    <div className="service1">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-headphones"
-                                                onClick={() => props.func(6)}>
-                                                <img src={headphones} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>고객문의</span>
-                                        </div>
-                                    </div>
-                                    <div className="service1">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
-                                                <img src={newspaper} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>공지사항</span>
-                                        </div>
-                                    </div>
-                                    <div className="service1">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
-                                                <img src={favorite} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>자주묻는 질문</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="serviceList">
-                                    <div className="service2">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-telephone" onClick={() => props.func(9)}>
-                                                <img src={telephone} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>1:1 문의하기</span>
-                                        </div>
-                                    </div>
-                                    <div className="service2">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-placeholder"
-                                                onClick={() => props.func(3)}>
-                                                <img src={placeholder} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>오시는 길</span>
-                                        </div>
-                                    </div>
-                                    <div className="service2">
-                                        <div className="serviceImg">
-                                            <div className="imgFrame imgFrame-user"
-                                                onClick={() => props.func(10)}
-                                            >
-                                                <img src={user} />
-                                            </div>
-                                        </div>
-                                        <div className="serviceNm">
-                                            <span>인재채용</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mainWrapper_service_m">
-                            <div>
-                                <div className="serviceList_m">
-                                    <div className="service_m">
+                            <div className="mainWrapper mainWrapper_service">
+                                <div>
+                                    <div className="serviceList">
                                         <div className="service1">
                                             <div className="serviceImg">
                                                 <div className="imgFrame imgFrame-headphones"
-                                                    onClick={() => props.func(6)}>
-                                                    <img src={headphones} />
+                                                    onClick={() => props.func(6)}
+                                                    onMouseOver={() => handleMouseOver(0)}
+                                                    onMouseOut={() => handleMouseOut(0)}
+                                                >
+                                                    {isHover[0] && (
+                                                        <img src={headphones} className="imgHover" />
+                                                    )}
+                                                    {!isHover[0] && (
+                                                        <img src={headphones} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
@@ -284,8 +233,17 @@ const Main = (props) => {
                                         </div>
                                         <div className="service1">
                                             <div className="serviceImg">
-                                                <div className="imgFrame imgFrame-newspaper" onClick={() => props.func(7)}>
-                                                    <img src={newspaper} />
+                                                <div className="imgFrame imgFrame-newspaper"
+                                                    onMouseOver={() => handleMouseOver(1)}
+                                                    onMouseOut={() => handleMouseOut(1)}
+                                                    onClick={() => props.func(7)}
+                                                >
+                                                    {isHover[1] && (
+                                                        <img src={newspaper} className="imgHover" />
+                                                    )}
+                                                    {!isHover[1] && (
+                                                        <img src={newspaper} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
@@ -294,42 +252,76 @@ const Main = (props) => {
                                         </div>
                                         <div className="service1">
                                             <div className="serviceImg">
-                                                <div className="imgFrame imgFrame-favorite" onClick={() => props.func(8)}>
-                                                    <img src={favorite} />
+                                                <div className="imgFrame imgFrame-favorite"
+                                                    onMouseOver={() => handleMouseOver(2)}
+                                                    onMouseOut={() => handleMouseOut(2)}
+                                                    onClick={() => props.func(8)}
+                                                >
+                                                    {isHover[2] && (
+                                                        <img src={favorite} className="imgHover" />
+                                                    )}
+                                                    {!isHover[2] && (
+                                                        <img src={favorite} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
                                                 <span>자주묻는 질문</span>
                                             </div>
                                         </div>
-                                        <div className="service1">
+                                    </div>
+                                    <div className="serviceList">
+                                        <div className="service2">
                                             <div className="serviceImg">
                                                 <div className="imgFrame imgFrame-telephone"
-                                                    onClick={() => props.func(9)}>
-                                                    <img src={telephone} />
+                                                    onMouseOver={() => handleMouseOver(3)}
+                                                    onMouseOut={() => handleMouseOut(3)}
+                                                    onClick={() => props.func(9)}
+                                                >
+                                                    {isHover[3] && (
+                                                        <img src={telephone} className="imgHover" />
+                                                    )}
+                                                    {!isHover[3] && (
+                                                        <img src={telephone} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
                                                 <span>1:1 문의하기</span>
                                             </div>
                                         </div>
-                                        <div className="service1">
+                                        <div className="service2">
                                             <div className="serviceImg">
                                                 <div className="imgFrame imgFrame-placeholder"
-                                                    onClick={() => props.func(3)}>
-                                                    <img src={placeholder} />
+                                                    onMouseOver={() => handleMouseOver(4)}
+                                                    onMouseOut={() => handleMouseOut(4)}
+                                                    onClick={() => props.func(3)}
+                                                >
+                                                    {isHover[4] && (
+                                                        <img src={placeholder} className="imgHover" />
+                                                    )}
+                                                    {!isHover[4] && (
+                                                        <img src={placeholder} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
                                                 <span>오시는 길</span>
                                             </div>
                                         </div>
-                                        <div className="service1">
+                                        <div className="service2">
                                             <div className="serviceImg">
                                                 <div className="imgFrame imgFrame-user"
+                                                    onMouseOver={() => handleMouseOver(5)}
+                                                    onMouseOut={() => handleMouseOut(5)}
                                                     onClick={() => props.func(10)}
                                                 >
-                                                    <img src={user} />
+                                                    {isHover[5] && (
+                                                        <img src={user} className="imgHover" />
+                                                    )}
+                                                    {!isHover[5] && (
+                                                        <img src={user} />
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="serviceNm">
@@ -339,7 +331,87 @@ const Main = (props) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        )}
+                        {props.mobileStat && (
+                            <div className="mainWrapper_service_m">
+                                <div>
+                                    <div className="serviceList_m">
+                                        <div className="service_m">
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-headphones"
+                                                        onClick={() => props.func(6)}
+                                                    >
+                                                        <img src={headphones} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>고객문의</span>
+                                                </div>
+                                            </div>
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-newspaper"
+                                                        onClick={() => props.func(7)}
+                                                    >
+                                                        <img src={newspaper} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>공지사항</span>
+                                                </div>
+                                            </div>
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-favorite"
+                                                        onClick={() => props.func(8)}>
+                                                        <img src={favorite} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>자주묻는 질문</span>
+                                                </div>
+                                            </div>
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-telephone"
+                                                        onClick={() => props.func(9)}>
+                                                        <img src={telephone} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>1:1 문의하기</span>
+                                                </div>
+                                            </div>
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-placeholder"
+                                                        onClick={() => props.func(3)}>
+                                                        <img src={placeholder} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>오시는 길</span>
+                                                </div>
+                                            </div>
+                                            <div className="service1">
+                                                <div className="serviceImg">
+                                                    <div className="imgFrame imgFrame-user"
+                                                        onClick={() => props.func(10)}
+                                                    >
+                                                        <img src={user} />
+                                                    </div>
+                                                </div>
+                                                <div className="serviceNm">
+                                                    <span>인재채용</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                     </div>
                 </div>
 

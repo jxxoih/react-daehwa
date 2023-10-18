@@ -1,7 +1,7 @@
 import "styles/company.css";
 
 import location_m from "assets/imgs/location_m.png";
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 
 const LocationMap = (props) => {
@@ -17,7 +17,7 @@ const LocationMap = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content3">

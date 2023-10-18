@@ -11,18 +11,20 @@
 }
 
 .slideTextWrapper {
-    z-index: 9999; 
-    color: #ffffff; 
-    position: absolute; 
+    z-index: 9999;
+    color: #ffffff;
+    position: absolute;
     text-align: left;
     left: 15.625vw;
     top: 50%;
     transform: translate(0, -50%);
 }
+
 .slideText1 {
     font-size: 2.604vw;
     font-weight: bold;
 }
+
 .slideText2 {
     font-size: 1.563vw;
     font-weight: bold;
@@ -61,7 +63,7 @@
     max-width: 1000px;
 }
 
-.mainWrapper_service > div {
+.mainWrapper_service>div {
     width: 100%;
     max-width: 1000px;
 }
@@ -70,7 +72,7 @@
     background-color: #EFEFEF;
 }
 
-.serviceContainer > div {
+.serviceContainer>div {
     width: 100%;
     max-width: 1000px;
 }
@@ -169,9 +171,14 @@
 
 
 .imgFrame:hover {
-    background-color: #000255;
+    background-color: #c0c0c0;
 }
 
+.imgFrame>.imgHover {
+    filter: brightness(0) invert(1);
+}
+
+/* 
 .imgFrame-headphones:hover img {
     content: url("assets/imgs/headphones_w.svg");
 }
@@ -189,7 +196,7 @@
 }
 .imgFrame-user:hover img {
     content: url("assets/imgs/user_w.svg");
-}
+} */
 .serviceImg img {
     width: 100%;
 }
@@ -202,7 +209,7 @@
 .mainWrapper_service_m {
     display: none;
 }
-  
+
 /* 모바일 */
 
 .productContainer_m {
@@ -244,6 +251,7 @@
     .slideImg {
         display: none;
     }
+
     .slideImg_m {
         display: block;
     }
@@ -252,6 +260,7 @@
         left: 1.25rem;
         top: 33%;
     }
+
     .slideText1 {
         font-size: 1.625rem;
     }
@@ -265,7 +274,7 @@
         width: 100%;
     }
 
-    .containerTitle > p {
+    .containerTitle>p {
         padding: 0 0.625rem;
     }
 
@@ -276,12 +285,13 @@
     .containerTitleKR {
         font-size: 1.25rem;
     }
+
     .containerTitleEng,
     .containerComment {
         font-size: 0.75rem;
     }
 
-    .serviceContainer > div {
+    .serviceContainer>div {
         width: 100%;
     }
 
@@ -289,7 +299,7 @@
         width: 100%;
     }
 
-    .service1, 
+    .service1,
     .service2 {
         width: 100%;
     }
@@ -312,7 +322,7 @@
         width: 7.5rem;
         padding: 1.875rem;
     }
-    
+
     .mainWrapper_service_m {
         display: block;
     }
@@ -322,10 +332,6 @@
     }
 }
 
-@media screen and (max-width: 360px) {
-	
-}
+@media screen and (max-width: 360px) {}
 
-@media screen and (max-width: 428px) {
-	
-}
+@media screen and (max-width: 428px) {}

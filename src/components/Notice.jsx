@@ -1,6 +1,6 @@
 import "styles/serviceCenter.css";
 
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 
 
@@ -17,7 +17,7 @@ const Notice = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content2">

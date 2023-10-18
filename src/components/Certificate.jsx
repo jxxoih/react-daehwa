@@ -5,7 +5,7 @@ import kr2 from "assets/imgs/kr2.png";
 import cn1 from "assets/imgs/cn1.png";
 import cn2 from "assets/imgs/cn2.png";
 
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 
 
@@ -23,7 +23,7 @@ const Certificate = (props) => {
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
             <div className="mainContentContainer">
                 <div className="content1">

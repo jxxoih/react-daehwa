@@ -12,19 +12,35 @@ import "styles/footer.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import MainLayout from "components/commons/MainLayout";
 import { Suspense } from "react";
+import Header from "components/commons/Header";
+import MobileHeader from "components/commons/MobileHeader";
+import Footer from "components/commons/Footer";
+import MobileFooter from "components/commons/MobileFooter";
 
-// import Main from "components/Main";
-const Main = React.lazy(() => import('components/Main'))
-const Greetings = React.lazy(() => import('components/Greetings'));
-const LocationMap = React.lazy(() => import('components/LocationMap'));
-const Certificate = React.lazy(() => import('components/Certificate'));
-const ServiceCenter = React.lazy(() => import('components/ServiceCenter'));
-const Notice = React.lazy(() => import('components/Notice'));
-const Faq = React.lazy(() => import('components/Faq'));
-const Question = React.lazy(() => import('components/Question'));
-const Employment = React.lazy(() => import('components/Employment'));
-const History = React.lazy(() => import('components/History'));
-const NoticeDetail = React.lazy(() => import('components/NoticeDetail'));
+import Main from "components/Main";
+import History from "components/History";
+import Greetings from "components/Greetings";
+import LocationMap from "components/LocationMap";
+import Certificate from "components/Certificate";
+import ServiceCenter from "components/ServiceCenter";
+import Notice from "components/Notice";
+import Faq from "components/Faq";
+import Question from "components/Question";
+import Employment from "components/Employment";
+import NoticeDetail from "components/NoticeDetail";
+
+
+// const Main = React.lazy(() => import('components/Main'))
+// const Greetings = React.lazy(() => import('components/Greetings'));
+// const History = React.lazy(() => import('components/History'));
+// const LocationMap = React.lazy(() => import('components/LocationMap'));
+// const Certificate = React.lazy(() => import('components/Certificate'));
+// const ServiceCenter = React.lazy(() => import('components/ServiceCenter'));
+// const Notice = React.lazy(() => import('components/Notice'));
+// const Faq = React.lazy(() => import('components/Faq'));
+// const Question = React.lazy(() => import('components/Question'));
+// const Employment = React.lazy(() => import('components/Employment'));
+// const NoticeDetail = React.lazy(() => import('components/NoticeDetail'));
 
 
 function App() {
@@ -111,6 +127,7 @@ function App() {
     }
     setCurLoc(idx);
     navigate(pathArr[idx])
+    eventUtil.topScroll();
   }
 
   return (
@@ -120,109 +137,159 @@ function App() {
           <img src={topBtn} alt="topBtn" />
         </div>
       )}
-      <Suspense>
-        <Routes>
-          <Route element={<MainLayout func={MoveToUrl} />}>
-            <Route
-              path={mainPath}
-              element={<Main
-                moblieStat={isMobile}
-                func={MoveToUrl}
-              />}
-            />
-            <Route
-              path={greetingsPath}
-              element={<Greetings
-                func={MoveToUrl}
-                pageIdx={1}
-                num={0}
-              />}
-            />
-            <Route
-              path={historyPath}
-              element={<History
-                func={MoveToUrl}
-                pageIdx={2}
-                num={0}
-              />}
-            />
-            <Route
-              path={locMapPath}
-              element={<LocationMap
-                func={MoveToUrl}
-                pageIdx={3}
-                num={0}
-              />}
-            />
-            <Route
-              path={certificatePath}
-              element={<Certificate
-                func={""}
-                pageIdx={4}
-                num={1}
-              />}
-            />
-            <Route
-              path={serviceCenterPath}
-              element={<ServiceCenter
-                func={MoveToUrl}
-                pageIdx={6}
-                num={2}
-              />}
-            />
-            <Route
-              path={noticePath}
-              element={<Notice
-                func={MoveToUrl}
-                pageIdx={7}
-                num={2}
-              />}
-            />
-            <Route
-              path={noticeDetailPath}
-              element={<NoticeDetail
-                func={MoveToUrl}
-                pageIdx={11}
-                num={2}
-                notiNum={notiNum}
-              />}
-            />
-            <Route
-              path={faqPath}
-              element={<Faq
-                func={MoveToUrl}
-                pageIdx={8}
-                num={2}
-              />}
-            />
-            <Route
-              path={questionPath}
-              element={
-                <Question
-                  func={MoveToUrl}
-                  pageIdx={9}
-                  num={2}
-                />
-              }
-            />
-            <Route
-              path={employmentPath}
-              element={
-                <Employment
-                  func={MoveToUrl}
-                  pageIdx={10}
-                  num={2}
-                />
-              }
-            />
-          </Route>
 
-          <Route
-            path="*"
-            element={<NotFound func={MoveToUrl} />}
+      {/* {!isMobile && (
+          <Header func={MoveToUrl} />
+        )}
+        {isMobile && (
+          <MobileHeader func={MoveToUrl} />
+        )}
+
+        {curLoc === 0 && (
+          <Main func={MoveToUrl} mobileStat={isMobile} />
+        )}
+        {curLoc === 1 && (
+          <Greetings func={MoveToUrl} num={0} pageIdx={1} />
+        )}
+        {curLoc === 2 && (
+          <History func={MoveToUrl} num={0} pageIdx={2} />
+        )}
+        {curLoc === 3 && (
+          <LocationMap func={MoveToUrl} num={0} pageIdx={3} />
+        )}
+        {curLoc === 5 && (
+          <Certificate func={MoveToUrl} num={1} pageIdx={5} />
+        )}
+        {curLoc === 6 && (
+          <ServiceCenter func={MoveToUrl} num={2} pageIdx={6} />
+        )}
+        {curLoc === 7 && (
+          <Notice func={MoveToUrl} num={2} pageIdx={7} />
+        )}
+        {curLoc === 8 && (
+          <Faq func={MoveToUrl} num={2} pageIdx={8} />
+        )}
+        {curLoc === 9 && (
+          <Question func={MoveToUrl} num={2} pageIdx={9} />
+        )}
+        {curLoc === 10 && (
+          <Employment func={MoveToUrl} num={2} pageIdx={10} />
+        )}
+        {curLoc === 11 && (
+          <NoticeDetail func={MoveToUrl} num={2} pageIdx={11} />
+        )}
+
+        {!isMobile && (
+          <Footer
+            func={MoveToUrl}
           />
-        </Routes>
-      </Suspense>
+        )}
+        {isMobile && (
+          <MobileFooter />
+        )} */}
+
+
+      <Routes>
+        <Route element={<MainLayout func={MoveToUrl} />}>
+          <Route
+            path={mainPath}
+            element={<Main
+              mobileStat={isMobile}
+              func={MoveToUrl}
+            />}
+          />
+          <Route
+            path={greetingsPath}
+            element={<Greetings
+              func={MoveToUrl}
+              pageIdx={1}
+              num={0}
+            />}
+          />
+          <Route
+            path={historyPath}
+            element={<History
+              func={MoveToUrl}
+              pageIdx={2}
+              num={0}
+            />}
+          />
+          <Route
+            path={locMapPath}
+            element={<LocationMap
+              func={MoveToUrl}
+              pageIdx={3}
+              num={0}
+            />}
+          />
+          <Route
+            path={certificatePath}
+            element={<Certificate
+              func={""}
+              pageIdx={4}
+              num={1}
+            />}
+          />
+          <Route
+            path={serviceCenterPath}
+            element={<ServiceCenter
+              func={MoveToUrl}
+              pageIdx={6}
+              num={2}
+            />}
+          />
+          <Route
+            path={noticePath}
+            element={<Notice
+              func={MoveToUrl}
+              pageIdx={7}
+              num={2}
+            />}
+          />
+          <Route
+            path={noticeDetailPath}
+            element={<NoticeDetail
+              func={MoveToUrl}
+              pageIdx={11}
+              num={2}
+              notiNum={notiNum}
+            />}
+          />
+          <Route
+            path={faqPath}
+            element={<Faq
+              func={MoveToUrl}
+              pageIdx={8}
+              num={2}
+            />}
+          />
+          <Route
+            path={questionPath}
+            element={
+              <Question
+                func={MoveToUrl}
+                pageIdx={9}
+                num={2}
+              />
+            }
+          />
+          <Route
+            path={employmentPath}
+            element={
+              <Employment
+                func={MoveToUrl}
+                pageIdx={10}
+                num={2}
+              />
+            }
+          />
+        </Route>
+
+        <Route
+          path="*"
+          element={<NotFound func={MoveToUrl} />}
+        />
+      </Routes>
 
     </div>
   );

@@ -1,5 +1,5 @@
 
-import MoblieSelectBox from "components/commons/MoblieSelectBox";
+import MobileSelectBox from "components/commons/MobileSelectBox";
 
 import article_img1 from "assets/imgs/article_img1.png";
 import eventUtil from "utils/common.js";
@@ -58,7 +58,7 @@ const div = document.querySelector('.App');
                 </div>
             </div>
 
-            <MoblieSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
+            <MobileSelectBox func={props.func} pageIdx={props.pageIdx} num={props.num} />
 
 
             <div className="mainContentContainer">

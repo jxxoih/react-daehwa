@@ -2,7 +2,7 @@ import UpImgComp from "components/UpImgComp";
 import { useState } from "react";
 
 
-const MoblieSelectBox = (props) => {
+const MobileSelectBox = (props) => {
     const [pageSelectBox, setPageSelectBox] = useState(false);
     const [pageName, setPageName] = useState([{
         kr: "회사소개",
@@ -118,4 +118,4 @@ const MoblieSelectBox = (props) => {
     );
 }
 
-export default MoblieSelectBox;
+export default MobileSelectBox;

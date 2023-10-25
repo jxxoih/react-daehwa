@@ -138,56 +138,6 @@ function App() {
         </div>
       )}
 
-      {/* {!isMobile && (
-          <Header func={MoveToUrl} />
-        )}
-        {isMobile && (
-          <MobileHeader func={MoveToUrl} />
-        )}
-
-        {curLoc === 0 && (
-          <Main func={MoveToUrl} mobileStat={isMobile} />
-        )}
-        {curLoc === 1 && (
-          <Greetings func={MoveToUrl} num={0} pageIdx={1} />
-        )}
-        {curLoc === 2 && (
-          <History func={MoveToUrl} num={0} pageIdx={2} />
-        )}
-        {curLoc === 3 && (
-          <LocationMap func={MoveToUrl} num={0} pageIdx={3} />
-        )}
-        {curLoc === 5 && (
-          <Certificate func={MoveToUrl} num={1} pageIdx={5} />
-        )}
-        {curLoc === 6 && (
-          <ServiceCenter func={MoveToUrl} num={2} pageIdx={6} />
-        )}
-        {curLoc === 7 && (
-          <Notice func={MoveToUrl} num={2} pageIdx={7} />
-        )}
-        {curLoc === 8 && (
-          <Faq func={MoveToUrl} num={2} pageIdx={8} />
-        )}
-        {curLoc === 9 && (
-          <Question func={MoveToUrl} num={2} pageIdx={9} />
-        )}
-        {curLoc === 10 && (
-          <Employment func={MoveToUrl} num={2} pageIdx={10} />
-        )}
-        {curLoc === 11 && (
-          <NoticeDetail func={MoveToUrl} num={2} pageIdx={11} />
-        )}
-
-        {!isMobile && (
-          <Footer
-            func={MoveToUrl}
-          />
-        )}
-        {isMobile && (
-          <MobileFooter />
-        )} */}
-
 
       <Routes>
         <Route element={<MainLayout func={MoveToUrl} />}>

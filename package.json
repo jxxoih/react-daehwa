@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://devziho.shop/",
+  "homepage": "https://devziho.shop/",
   "eslintConfig": {
     "extends": [
       "react-app",
